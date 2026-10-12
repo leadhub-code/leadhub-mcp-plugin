@@ -1,0 +1,11 @@
+interface:
+  display_name: Retention review
+  short_description: Repeat-purchase timing and first-purchase cohort retention.
+  default_prompt: How fast do first-time buyers come back, and are later cohorts stronger?
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

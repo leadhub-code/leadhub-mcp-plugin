@@ -1,0 +1,18 @@
+{
+  "name": "leadhub",
+  "displayName": "Leadhub",
+  "version": "0.1.0",
+  "description": "Read-only access to the Leadhub MCP server: businesses, campaigns, products, interest lists, RFM, and analytics. Includes six analytics workflows.",
+  "author": {
+    "name": "Leadhub",
+    "url": "https://www.leadhub.co"
+  },
+  "homepage": "https://www.leadhub.co",
+  "repository": "https://github.com/peterkruty-leadhub/leadhub-plugin",
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://podpora.leadhub.co/",
+  "supportUrl": "https://podpora.leadhub.co/",
+  "privacyPolicyUrl": "https://www.leadhub.co/zasady-zpracovani-osobnich-udaju",
+  "termsOfServiceUrl": "https://www.leadhub.co/podminky-pouziti",
+  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm"]
+}

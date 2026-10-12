@@ -1,0 +1,11 @@
+interface:
+  display_name: RFM review
+  short_description: Current RFM segments, mix over month-ends, and who moved.
+  default_prompt: Review RFM segments and who moved in the last 30 days.
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

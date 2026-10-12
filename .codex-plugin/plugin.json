@@ -1,0 +1,30 @@
+{
+  "name": "leadhub",
+  "version": "0.1.0",
+  "description": "Read-only access to the Leadhub MCP server: businesses, campaigns, products, interest lists, RFM, and analytics. Includes six analytics workflows.",
+  "author": {
+    "name": "Leadhub",
+    "url": "https://www.leadhub.co"
+  },
+  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.codex.json",
+  "interface": {
+    "displayName": "Leadhub",
+    "shortDescription": "Read Leadhub data: analytics, campaigns, products, lists, RFM.",
+    "longDescription": "Connects to the Leadhub MCP server. All tools are read-only: businesses, campaigns, products, interest lists, RFM profiles, and analytics. Six bundled workflows cover period review, email, SMS, retention, RFM, and traffic. Analytics tools return one period at a time; a comparison is a second call. Money from email and SMS tools is in the business primary currency.",
+    "developerName": "Leadhub",
+    "websiteURL": "https://www.leadhub.co",
+    "supportURL": "https://podpora.leadhub.co/",
+    "privacyPolicyURL": "https://www.leadhub.co/zasady-zpracovani-osobnich-udaju",
+    "termsOfServiceURL": "https://www.leadhub.co/podminky-pouziti",
+    "logo": "./assets/logo.png",
+    "category": "Productivity",
+    "capabilities": ["Read analytics", "Read campaigns", "Read products"],
+    "defaultPrompt": [
+      "Summarize this business for the last 30 days against the previous 30.",
+      "Explain why email revenue changed in the selected period.",
+      "Find my latest email campaign and show its results."
+    ]
+  }
+}

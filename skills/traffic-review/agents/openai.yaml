@@ -1,0 +1,11 @@
+interface:
+  display_name: Traffic review
+  short_description: Traffic volume, sources, journeys, and the transition matrix.
+  default_prompt: Which traffic sources bring visits, and which ones convert?
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

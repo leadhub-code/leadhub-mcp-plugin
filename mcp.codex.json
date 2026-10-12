@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "leadhub": {
+      "type": "http",
+      "url": "https://api.leadhub.co/mcp"
+    }
+  }
+}

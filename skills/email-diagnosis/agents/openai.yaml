@@ -1,0 +1,11 @@
+interface:
+  display_name: Email diagnosis
+  short_description: Email revenue, audience, campaigns, links, and deliverability.
+  default_prompt: Explain why email revenue changed in the selected period.
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

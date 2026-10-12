@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "leadhub": {
+      "url": "https://api.leadhub.co/mcp"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+interface:
+  display_name: Period review
+  short_description: Orders, traffic, email, and SMS against the previous period.
+  default_prompt: Summarize this business for the last 30 days against the previous 30.
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp
