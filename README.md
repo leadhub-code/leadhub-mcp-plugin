@@ -27,9 +27,9 @@ The only network call is the MCP client talking to that Leadhub server. The plug
 
 ## Install
 
-This folder is the plugin. The public repository is [peterkruty-leadhub/leadhub-plugin](https://github.com/peterkruty-leadhub/leadhub-plugin). These files are the repository root, so `gemini-extension.json` sits next to this README. In the Leadhub API repository the same folder is `plugins/leadhub`.
+This folder is the plugin. The public repository is [leadhub-code/leadhub-mcp-plugin](https://github.com/leadhub-code/leadhub-mcp-plugin). These files are the repository root, so `gemini-extension.json` sits next to this README. In the Leadhub API repository the same folder is `plugins/leadhub`.
 
-Gemini CLI gallery also needs the GitHub topic `gemini-cli-extension` and a git tag equal to `version` in the manifests (`0.1.0`).
+Gemini CLI gallery also needs the GitHub topic `gemini-cli-extension` and a git tag equal to `version` in the manifests (`0.1.1`).
 
 Claude Code, from a clone of the public repository:
 
@@ -66,5 +66,5 @@ gemini extensions link plugins/leadhub
 Restart the CLI after linking. Install from GitHub with:
 
 ```bash
-gemini extensions install peterkruty-leadhub/leadhub-plugin
+gemini extensions install leadhub-code/leadhub-mcp-plugin
 ```

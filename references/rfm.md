@@ -11,8 +11,10 @@ Buckets the profile does not name come back as "(unassigned)".
 The page uses the last 12 month-ends.
 
 `rfm_movement` compares two reference dates.
-segment_movements are named. "New" means the customer was not in the earlier window.
-"Churned" means they were not in the later one.
+segment_movements are named, and triples the profile does not name are "(unassigned)".
+"(not in earlier window)" is where a customer comes from who was not in the earlier window.
+"(not in later window)" is where a customer goes who was not in the later one.
+They are in parentheses so they do not mix with a profile segment such as "Churned".
 bucket_movement is the headcount change of each recency, frequency, and monetary bucket.
 delta is the later window minus the earlier one.
 

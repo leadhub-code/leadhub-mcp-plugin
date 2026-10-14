@@ -18,6 +18,6 @@ Pass those type strings as `campaign_types`. Pass a group to `*_campaign_type_st
 Null `campaign_types` means every type of that channel.
 
 `targeted_emailing_campaign_stats`, `incremental_emailing_campaign_stats`, and `get_campaign_statistics`
-are not these tabs. They load a campaign's own stats (lifetime for a targeted send) from another
-service, filtered by when the campaign was scheduled. Use the `email_*` and `sms_*` tools to answer
+are not these tabs. They load a campaign's own stats (lifetime for a targeted send), filtered by
+when the campaign was scheduled. Use the `email_*` and `sms_*` tools to answer
 "what did email do in this period".

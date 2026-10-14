@@ -1,0 +1,11 @@
+interface:
+  display_name: "Campaign content review"
+  short_description: "Email content and targeting next to campaign results."
+  default_prompt: "Review the content and targeting of my recent email campaigns next to their results."
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

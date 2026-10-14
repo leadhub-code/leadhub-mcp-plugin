@@ -1,14 +1,14 @@
 {
   "name": "leadhub",
   "displayName": "Leadhub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only access to the Leadhub MCP server: businesses, campaigns, products, interest lists, RFM, and analytics. Includes six analytics workflows.",
   "author": {
     "name": "Leadhub",
     "url": "https://www.leadhub.co"
   },
   "homepage": "https://www.leadhub.co",
-  "repository": "https://github.com/peterkruty-leadhub/leadhub-plugin",
+  "repository": "https://github.com/leadhub-code/leadhub-mcp-plugin",
   "icon": "./assets/logo.png",
   "documentationUrl": "https://podpora.leadhub.co/",
   "supportUrl": "https://podpora.leadhub.co/",

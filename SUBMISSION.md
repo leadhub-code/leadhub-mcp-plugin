@@ -31,3 +31,4 @@ These should not run. The server has no tool that writes, sends, or deletes.
 ## Release notes
 
 0.1.0 — First listing. Read-only Leadhub MCP: businesses, campaigns, products, interest lists, RFM, and analytics, plus six analytics workflows.
+0.1.1 — Adds skills for campaign content and segmentation.

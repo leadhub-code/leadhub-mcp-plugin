@@ -1,7 +1,7 @@
 interface:
-  display_name: SMS diagnosis
-  short_description: SMS revenue, audience, campaign types, and campaigns.
-  default_prompt: Explain SMS results for the selected period against the previous one.
+  display_name: "SMS diagnosis"
+  short_description: "SMS revenue, channel activity, campaign types, and campaigns."
+  default_prompt: "Explain SMS results for the selected period against the previous one."
 dependencies:
   tools:
     - type: mcp

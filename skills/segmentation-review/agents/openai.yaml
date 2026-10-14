@@ -1,0 +1,11 @@
+interface:
+  display_name: "Segmentation review"
+  short_description: "Who a campaign or saved segment targets, and how to tighten it."
+  default_prompt: "Explain who this campaign targets and suggest better segment conditions."
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

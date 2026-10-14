@@ -1,6 +1,6 @@
 {
   "name": "leadhub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only access to the Leadhub MCP server: businesses, campaigns, products, interest lists, RFM, and analytics. Includes six analytics workflows.",
   "author": {
     "name": "Leadhub",
