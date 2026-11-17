@@ -1,0 +1,14 @@
+{
+  "name": "leadhub",
+  "owner": {
+    "name": "Leadhub",
+    "url": "https://www.leadhub.co"
+  },
+  "description": "The Leadhub plugin: access to the Leadhub MCP server.",
+  "plugins": [
+    {
+      "name": "leadhub",
+      "source": "."
+    }
+  ]
+}

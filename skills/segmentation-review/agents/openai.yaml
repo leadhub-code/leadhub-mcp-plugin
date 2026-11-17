@@ -1,6 +1,6 @@
 interface:
   display_name: "Segmentation review"
-  short_description: "Who a campaign or saved segment targets, and how to tighten it."
+  short_description: "Who a campaign or audience targets, and how to tighten it."
   default_prompt: "Explain who this campaign targets and suggest better segment conditions."
 dependencies:
   tools:

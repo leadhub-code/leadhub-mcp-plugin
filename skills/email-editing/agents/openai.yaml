@@ -1,0 +1,11 @@
+interface:
+  display_name: "Email editing"
+  short_description: "Change the texts, buttons, images, and layout of a campaign email."
+  default_prompt: "Make the buttons in my latest newsletter green."
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

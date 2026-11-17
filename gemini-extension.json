@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
-  "version": "0.1.1",
-  "description": "Read-only access to a Leadhub account: businesses, campaigns, products, interest lists, RFM, and analytics.",
+  "version": "0.2.0",
+  "description": "Access to a Leadhub account: reads businesses, campaigns, products, interest lists, RFM, and analytics, creates and edits audiences, and edits campaign emails.",
   "mcpServers": {
     "leadhub": {
       "httpUrl": "https://api.leadhub.co/mcp"

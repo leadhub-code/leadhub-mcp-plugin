@@ -1,0 +1,11 @@
+interface:
+  display_name: "Marketing strategy"
+  short_description: "What to set up in Leadhub next, ranked by expected revenue."
+  default_prompt: "Propose what this business should set up in Leadhub next."
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

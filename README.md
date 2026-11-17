@@ -1,14 +1,15 @@
 # Leadhub
 
-Read-only access to a Leadhub account: businesses, campaigns, products, interest lists, RFM, and analytics. The plugin does not create, update, or delete anything. Every request goes to the Leadhub MCP server at `https://api.leadhub.co/mcp`.
+Access to a Leadhub account: businesses, campaigns, products, interest lists, RFM, and analytics are read; audiences can be created, edited, copied, and deleted; campaign emails can be edited. An email edit saves a new revision in the Leadhub email editor and never launches or sends a campaign. A tool that changes what customers get (deleting an audience also deletes it on Facebook) is marked destructive, so the app asks the user first. Every request goes to the Leadhub MCP server at `https://api.leadhub.co/mcp`.
 
-Six workflows are bundled as skills: a period review, an email diagnosis, an SMS diagnosis, repeat-purchase retention, RFM segments, and traffic. Other areas (campaigns, products, lists) are available as tools on the same server. Money from the email and SMS tools is in the business primary currency. A period comparison is a second call, not a parameter on the first one.
+Ten workflows are bundled as skills: a period review, an email diagnosis, an SMS diagnosis, repeat-purchase retention, RFM segments, traffic, a campaign content review, a segmentation review, a marketing strategy, and email editing. Other areas (campaigns, products, lists) are available as tools on the same server. Money from the email and SMS tools is in the business primary currency. A period comparison is a second call, not a parameter on the first one.
 
 ## What each app reads
 
 | File | App | Role |
 | --- | --- | --- |
 | `.claude-plugin/plugin.json` | Claude Code, Cowork | plugin identity |
+| `.claude-plugin/marketplace.json` | Claude Code | makes the public repository a marketplace with this one plugin |
 | `.mcp.json` | Claude Code, Cowork | remote MCP URL (`type: http`) |
 | `.codex-plugin/plugin.json` | ChatGPT, Codex | identity, listing text, three starter prompts |
 | `mcp.codex.json` | ChatGPT, Codex | remote MCP URL (`type: http`) |
@@ -29,7 +30,20 @@ The only network call is the MCP client talking to that Leadhub server. The plug
 
 This folder is the plugin. The public repository is [leadhub-code/leadhub-mcp-plugin](https://github.com/leadhub-code/leadhub-mcp-plugin). These files are the repository root, so `gemini-extension.json` sits next to this README. In the Leadhub API repository the same folder is `plugins/leadhub`.
 
-Gemini CLI gallery also needs the GitHub topic `gemini-cli-extension` and a git tag equal to `version` in the manifests (`0.1.1`).
+Gemini CLI gallery also needs the GitHub topic `gemini-cli-extension` and a git tag equal to `version` in the manifests (`0.2.0`).
+
+Claude Code 2.1.275 or later installs the plugin from the public repository in one step:
+
+```
+/plugin install leadhub --marketplace leadhub-code/leadhub-mcp-plugin
+```
+
+In an older version, add the marketplace first, then install the plugin:
+
+```
+/plugin marketplace add leadhub-code/leadhub-mcp-plugin
+/plugin install leadhub@leadhub
+```
 
 Claude Code, from a clone of the public repository:
 

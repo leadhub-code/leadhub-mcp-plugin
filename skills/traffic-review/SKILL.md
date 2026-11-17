@@ -5,8 +5,12 @@ description: "Review traffic volume, sources, journeys, and the channel transiti
 
 Read `references/comparisons.md` and `references/metrics.md`.
 
-Call `session_statistics` for the total and again with `group_by` source and medium. Call `session_statistics_trend` for the shape of the range. Call `journey_stats` and `transition_matrix`. Repeat `session_statistics` for the previous period.
+The question is where visits come from, which of them convert, and how that compares with the period before.
 
-Say which sources introduce visits, which ones convert, and which ones end without a purchase. The comparison is a second call, not a parameter.
+A good start: `session_statistics` for the total and grouped by source and medium, `session_statistics_trend` for the shape of the range, `journey_stats`, and `transition_matrix`. Use what the question needs.
 
-The files named above sit next to this plugin, under `references/`. On Claude.ai the same text is already served live as MCP resources. This copy is for a packaged skill, which does not read those resources at runtime.
+The comparison is a second call with the previous period, not a parameter.
+
+Sources that bring visits, sources that convert, and journeys that end without a purchase are often worth a look. Follow what the data shows.
+
+The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

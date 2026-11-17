@@ -1,16 +1,16 @@
 ---
 name: segmentation-review
-description: "Explain who a campaign or saved segment targets, and suggest better conditions. Use when the user asks who a campaign or saved segment targets."
+description: "Explain who a campaign or audience targets, and suggest better conditions. Use when the user asks who a campaign or audience targets."
 ---
 
 Read `references/segmentation-conditions.md`.
 
-For a campaign call `get_campaign_targeting`; for a saved segment call `list_segments` and `get_segment`.
+The question is who a campaign or an audience reaches, in plain language, and how it could target better.
 
-Resolve ids in the conditions to names: `campaign_id` with `get_campaign`, interest lists with `interest_lists`, RFM segments with `list_rfm_profiles`.
+`list_segment_conditions` lists the conditions this business can use. For a campaign, `get_campaign_targeting` gives the segment; for an audience, `list_audiences` and `get_audience`. Ids in the conditions resolve with `get_campaign`, `interest_lists`, and `list_rfm_profiles`.
 
-Explain the segment in plain language, block by block, including the AND/OR logic and the interest lists. For automated campaigns explain when a contact enters and whether `send_to_initial_segment` applies.
+Explain the AND/OR logic and the interest lists. For an automated campaign, when a contact enters and whether `send_to_initial_segment` applies.
 
-Then suggest concrete condition changes using only conditions from the catalog, as rule JSON the user can rebuild in the Leadhub segment designer. The tools are read-only.
+Suggested changes use only conditions from `list_segment_conditions`, as rule JSON the user can rebuild in the Leadhub segment designer. `validate_segment_query` checks a proposed tree and `count_segment_audience` says how many contacts it reaches. A proposal the user approves can be saved as an audience with `create_audience` or `update_audience`.
 
-The files named above sit next to this plugin, under `references/`. On Claude.ai the same text is already served live as MCP resources. This copy is for a packaged skill, which does not read those resources at runtime.
+The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

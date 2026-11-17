@@ -5,12 +5,12 @@ description: "Review email campaigns by content and targeting, next to their res
 
 Read `references/metrics.md` and `references/segmentation-conditions.md`.
 
-Call `email_campaign_performance` for the requested range to pick the campaigns, or use the campaigns the user names (`list_campaigns` or `search_campaigns`).
+The question is how the content and the targeting of email campaigns relate to their results.
 
-For each campaign call `get_campaign_email_content` and `get_campaign_targeting`.
+Pick the campaigns with `email_campaign_performance` for the requested range, or use the campaigns the user names (`list_campaigns` or `search_campaigns`). `get_campaign_email_content` and `get_campaign_targeting` show what each one said and who it went to.
 
-Relate results to the subject, preheader, copy, calls to action, and who the email went to. For A/B campaigns compare the variants and say what the winner did differently.
+Subject, preheader, copy, calls to action, and the audience are the usual suspects; for an A/B campaign, what the winner did differently. Look at whatever explains the results.
 
-Suggest concrete changes to content and segment conditions. The tools are read-only: the user applies changes in Leadhub.
+Suggest changes the user can make in Leadhub. Change an email only when the user asks for it, with `edit_campaign_email`.
 
-The files named above sit next to this plugin, under `references/`. On Claude.ai the same text is already served live as MCP resources. This copy is for a packaged skill, which does not read those resources at runtime.
+The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

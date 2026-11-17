@@ -1,6 +1,6 @@
 interface:
   display_name: "Email diagnosis"
-  short_description: "Email revenue, channel activity, campaigns, links, and deliverability."
+  short_description: "Email revenue, channel activity, campaign types, campaigns, and links."
   default_prompt: "Explain why email revenue changed in the selected period."
 dependencies:
   tools:

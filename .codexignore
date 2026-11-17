@@ -1,0 +1,15 @@
+# Files Codex leaves out of the installed plugin.
+
+# Local system files
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+
+# Local secrets and editor state
+.env
+.env.*
+*.pem
+*.key
+.vscode/
+.idea/

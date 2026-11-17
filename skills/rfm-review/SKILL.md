@@ -5,10 +5,12 @@ description: "Review current RFM segments, how their mix changed, and who moved.
 
 Read `references/rfm.md`.
 
-Call `list_rfm_profiles` and use the default profile unless the user names one.
+The question is what the customer base looks like by RFM segment, and how it is shifting.
 
-Call `get_rfm_analysis` for the current window, `rfm_segment_composition` for the last 12 month-ends, and `rfm_movement` between a start and end reference date the user cares about. Default the end to now and the start to 30 days earlier.
+`list_rfm_profiles` names the profiles; use the default one unless the user names another. `get_rfm_analysis` gives the current window, `rfm_segment_composition` the mix over time (the web uses the last 12 month-ends), and `rfm_movement` who moved between two reference dates (without dates from the user, the last 30 days is a sensible default).
 
-Explain named segments and the (not in earlier window) and (not in later window) movements. Use `bucket_movement` for shifts along recency, frequency, and monetary. Do not edit the profile.
+(not in earlier window) and (not in later window) are customers entering and leaving the window. `bucket_movement` shows shifts along recency, frequency, and monetary.
 
-The files named above sit next to this plugin, under `references/`. On Claude.ai the same text is already served live as MCP resources. This copy is for a packaged skill, which does not read those resources at runtime.
+Focus on the segments and moves that matter for this business. The tools do not edit the profile.
+
+The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

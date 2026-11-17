@@ -5,8 +5,10 @@ description: "Review repeat-purchase timing and first-purchase cohort retention.
 
 Read `references/metrics.md`.
 
-Call `repeat_purchase_cycle` and `first_purchase_cohorts`.
+The question is how first-time buyers come back.
 
-Describe how fast first-time buyers return, and whether later cohorts retain and spend more or less than earlier ones. LTV is in the business primary currency from `list_businesses`.
+`repeat_purchase_cycle` shows how fast they return and `first_purchase_cohorts` how cohorts retain and spend; other order tools can fill in the picture.
 
-The files named above sit next to this plugin, under `references/`. On Claude.ai the same text is already served live as MCP resources. This copy is for a packaged skill, which does not read those resources at runtime.
+Worth a look, for example: when most returns happen, and whether later cohorts do better or worse than earlier ones. LTV is in the business primary currency from `list_businesses`.
+
+The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
