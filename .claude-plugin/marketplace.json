@@ -4,7 +4,7 @@
     "name": "Leadhub",
     "url": "https://www.leadhub.co"
   },
-  "description": "The Leadhub plugin: access to the Leadhub MCP server.",
+  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
   "plugins": [
     {
       "name": "leadhub",

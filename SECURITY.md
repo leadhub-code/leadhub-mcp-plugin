@@ -6,6 +6,6 @@ Only the latest released version of this plugin gets fixes. The plugin has no co
 
 ## Reporting a vulnerability
 
-Email `api@leadhub.co` with the subject "Security". Describe the issue, the steps to reproduce it, and which app and plugin version you used. Do not open a public issue for a vulnerability.
+Email `podpora@leadhub.co` with the subject "Security". Describe the issue, the steps to reproduce it, and which app and plugin version you used. Do not open a public issue for a vulnerability.
 
 For other questions, use [Leadhub support](https://podpora.leadhub.co/).

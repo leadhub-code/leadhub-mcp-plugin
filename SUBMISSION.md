@@ -4,7 +4,7 @@ This folder is the plugin. It lives in the Leadhub API repository as `plugins/le
 
 ## ChatGPT review
 
-The review test cases and the release note of the current version are in `.codex-plugin/plugin.json` under `extensions.com.openai`, where the OpenAI submission docs put them; the portal imports and validates them with the ZIP. The test account goes into the review form, and the demo video URL goes into `review.demo_recording_url` once it is recorded.
+`make plugin-zip-openai` builds the ZIP for the portal from the committed plugin, without the Claude, Cursor, and Gemini manifests. The review test cases and the release note of the current version are in `.codex-plugin/plugin.json` under `extensions.com.openai`, where the OpenAI submission docs put them; the portal imports and validates them with the ZIP. The test account goes into the review form, and the demo video URL goes into `review.demo_recording_url` once it is recorded.
 
 The test account needs a business whose newest newsletter (`targeted-emailing`) is a draft or scheduled, so the email editing case can say when recipients get the change. For a sent campaign the edit changes only the email kept in the editor.
 

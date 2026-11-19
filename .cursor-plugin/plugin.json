@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
   "author": {
-    "name": "Leadhub"
+    "name": "Leadhub",
+    "url": "https://www.leadhub.co"
   },
   "homepage": "https://www.leadhub.co",
   "repository": "https://github.com/leadhub-code/leadhub-mcp-plugin",
