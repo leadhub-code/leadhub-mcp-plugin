@@ -1,4 +1,8 @@
-# ChatGPT directory submission notes
+# Directory submission and maintainer notes
+
+This folder is the plugin. It lives in the Leadhub API repository as `plugins/leadhub`, and `make publish-plugin` copies it to the root of the public repository [leadhub-code/leadhub-mcp-plugin](https://github.com/leadhub-code/leadhub-mcp-plugin).
+
+## ChatGPT review
 
 The review test cases and the release note of the current version are in `.codex-plugin/plugin.json` under `extensions.com.openai`, where the OpenAI submission docs put them; the portal imports and validates them with the ZIP. The test account goes into the review form, and the demo video URL goes into `review.demo_recording_url` once it is recorded.
 
@@ -16,6 +20,39 @@ Each tool has one of three sets of annotations (`lh_api/mcp/annotations.py`):
 | Destructive: `update_audience`, `delete_audience` | false | true | `update_audience` overwrites the name or the segment; an audience the user syncs to an ad platform passes a new segment there. `delete_audience` also deletes the audience on Facebook. The app asks the user first. |
 
 `openWorldHint` is false for every tool: a call stays inside that one Leadhub account. It does not search the public web or call an open set of other services.
+
+## Plugin files
+
+| File | App | Role |
+| --- | --- | --- |
+| `.claude-plugin/plugin.json` | Claude Code, Cowork | plugin identity |
+| `.claude-plugin/marketplace.json` | Claude Code | makes the public repository a marketplace with this one plugin |
+| `.mcp.json` | Claude Code, Cowork | remote MCP URL (`type: http`) |
+| `.codex-plugin/plugin.json` | ChatGPT, Codex | identity, listing text, three starter prompts, review test cases and the release note for the ChatGPT review |
+| `mcp.codex.json` | ChatGPT, Codex | remote MCP URL (`type: http`) |
+| `.cursor-plugin/plugin.json` | Cursor | plugin identity, paths to skills and MCP |
+| `mcp.cursor.json` | Cursor | remote MCP URL (`url` only; Cursor infers the transport) |
+| `gemini-extension.json` | Gemini CLI | extension identity and remote MCP URL (`httpUrl`, Streamable HTTP) |
+| `skills/*/SKILL.md` | every app | when to use the workflow and which tools to call |
+| `skills/*/agents/openai.yaml` | ChatGPT, Codex | skill name and MCP binding (`transport: streamable_http`) |
+| `references/` | packaged skill | copies of the metric, category, comparison, and RFM notes |
+
+Skills and `references/` are one shared copy. Only the manifests and MCP links differ per app.
+
+`streamable_http` in `agents/openai.yaml` uses an underscore. `http` in `mcp.codex.json` and `.mcp.json` is the same Streamable HTTP transport. In `gemini-extension.json`, `httpUrl` is Streamable HTTP. A `url` field in that file would mean SSE.
+
+The only network call is the MCP client talking to the Leadhub server. The plugin does not call any other host, and it does not read tokens from the machine.
+
+The Gemini CLI gallery needs the GitHub topic `gemini-cli-extension` and a git tag equal to `version` in the manifests (`1.0.0`).
+
+Run the plugin from a local folder:
+
+```bash
+claude --plugin-dir plugins/leadhub
+gemini extensions link plugins/leadhub
+```
+
+From a clone of the public repository, use `.` instead of `plugins/leadhub`. Restart Gemini CLI after linking.
 
 ## Release notes
 
