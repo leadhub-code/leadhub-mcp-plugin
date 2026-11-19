@@ -11,7 +11,7 @@
   "repository": "https://github.com/leadhub-code/leadhub-mcp-plugin",
   "license": "LicenseRef-Proprietary",
   "icon": "./assets/logo.png",
-  "documentationUrl": "https://podpora.leadhub.co/",
+  "documentationUrl": "https://api.leadhub.co/mcp/docs",
   "supportUrl": "https://podpora.leadhub.co/",
   "privacyPolicyUrl": "https://www.leadhub.co/zasady-zpracovani-osobnich-udaju",
   "termsOfServiceUrl": "https://www.leadhub.co/podminky-pouziti",
