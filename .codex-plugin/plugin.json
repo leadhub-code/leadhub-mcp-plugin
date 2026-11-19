@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
   "version": "1.0.0",
-  "description": "Access to the Leadhub MCP server: reads businesses, campaigns, products, interest lists, RFM, and analytics, creates and edits audiences, and edits campaign emails. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing.",
+  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
   "author": {
     "name": "Leadhub",
     "url": "https://www.leadhub.co"
@@ -14,8 +14,8 @@
   "mcpServers": "./mcp.codex.json",
   "interface": {
     "displayName": "Leadhub",
-    "shortDescription": "Leadhub data, audiences, email",
-    "longDescription": "Connects to the Leadhub MCP server. Its tools read businesses, campaigns, products, interest lists, RFM profiles, and analytics. Audiences can be created, edited, copied, and deleted, and an edit or a delete is confirmed by the user first. Campaign emails can be edited: an edit saves a new revision in the Leadhub email editor and never sends a campaign. Ten bundled workflows cover period review, email, SMS, retention, RFM, traffic, campaign content, segmentation, marketing strategy, and email editing. Analytics tools return one period at a time; a comparison is a second call. Money from email and SMS tools is in the business primary currency.",
+    "shortDescription": "E-shop campaigns and analytics",
+    "longDescription": "Leadhub is a marketing automation platform for e-shops. It collects orders, products, and website visits from the shop, builds customer segments and RFM profiles from them, and reaches customers with targeted email and SMS campaigns, automated journeys, and popups. Every campaign is measured by the orders and revenue it brings.\n\nThis plugin brings your Leadhub account into the chat. Today it can:\n\u2022 Analyze how the shop, products, and email and SMS campaigns performed in any period, compared with an earlier one, including RFM segments and repeat purchases.\n\u2022 Find the customers you want to reach and save them as an audience.\n\u2022 Change the texts, buttons, and images of a campaign email.\n\nYou stay in control: an audience is changed or deleted only after you confirm, and an email edit is saved as a new version in the Leadhub editor. Nothing is ever sent.\n\nIncludes ten ready workflows, from a period review and RFM segmentation to campaign content and email editing.",
     "developerName": "Leadhub",
     "websiteURL": "https://www.leadhub.co",
     "supportURL": "https://podpora.leadhub.co/",
@@ -23,7 +23,7 @@
     "termsOfServiceURL": "https://www.leadhub.co/podminky-pouziti",
     "logo": "./assets/logo.png",
     "composerIcon": "./assets/logo.png",
-    "category": "Productivity",
+    "category": "Business & Operations",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Summarize this business for the last 30 days against the previous 30.",

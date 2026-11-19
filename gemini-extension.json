@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
   "version": "1.0.0",
-  "description": "Access to a Leadhub account: reads businesses, campaigns, products, interest lists, RFM, and analytics, creates and edits audiences, and edits campaign emails.",
+  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
   "mcpServers": {
     "leadhub": {
       "httpUrl": "https://api.leadhub.co/mcp"
