@@ -1,4 +1,4 @@
-# Leadhub
+# Leadhub plugin
 
 Leadhub is a marketing automation platform for e-shops. It collects orders, products, and website visits from the shop, builds customer segments and RFM profiles from them, and reaches customers with targeted email and SMS campaigns, automated journeys, and popups. Every campaign is measured by the orders and revenue it brings.
 
