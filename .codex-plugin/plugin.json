@@ -1,6 +1,6 @@
 {
   "name": "leadhub",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Access to the Leadhub MCP server: reads businesses, campaigns, products, interest lists, RFM, and analytics, creates and edits audiences, and edits campaign emails. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing.",
   "author": {
     "name": "Leadhub",
@@ -15,7 +15,7 @@
   "interface": {
     "displayName": "Leadhub",
     "shortDescription": "Leadhub data, audiences, email",
-    "longDescription": "Connects to the Leadhub MCP server. Its tools read businesses, campaigns, products, interest lists, RFM profiles, and analytics. Audiences can be created, edited, copied, and deleted, and a delete is confirmed by the user first. Campaign emails can be edited: an edit saves a new revision in the Leadhub email editor and never sends a campaign. Ten bundled workflows cover period review, email, SMS, retention, RFM, traffic, campaign content, segmentation, marketing strategy, and email editing. Analytics tools return one period at a time; a comparison is a second call. Money from email and SMS tools is in the business primary currency.",
+    "longDescription": "Connects to the Leadhub MCP server. Its tools read businesses, campaigns, products, interest lists, RFM profiles, and analytics. Audiences can be created, edited, copied, and deleted, and an edit or a delete is confirmed by the user first. Campaign emails can be edited: an edit saves a new revision in the Leadhub email editor and never sends a campaign. Ten bundled workflows cover period review, email, SMS, retention, RFM, traffic, campaign content, segmentation, marketing strategy, and email editing. Analytics tools return one period at a time; a comparison is a second call. Money from email and SMS tools is in the business primary currency.",
     "developerName": "Leadhub",
     "websiteURL": "https://www.leadhub.co",
     "supportURL": "https://podpora.leadhub.co/",
@@ -27,8 +27,65 @@
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Summarize this business for the last 30 days against the previous 30.",
-      "Explain why email revenue changed in the selected period.",
+      "Explain why email revenue changed in the last 30 days compared with the previous 30.",
       "Find my latest email campaign and show its results."
     ]
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Business overview: compares the last 30 days with the previous 30 across orders, traffic, email, and SMS.",
+              "prompt": "Summarize this business for the last 30 days against the previous 30.",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `order_statistics`, `session_statistics`, `email_channel_statistics`, `sms_channel_statistics`, each for both periods",
+              "expected_behavior": "One summary with both periods side by side. Counts change as a relative percent, rates in percentage points, money in the business primary currency."
+            },
+            {
+              "description": "Email diagnosis: explains a change in email revenue between two periods.",
+              "prompt": "Explain why email revenue changed in the last 30 days compared with the previous 30.",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `email_channel_statistics` for both periods, `email_campaign_type_statistics`, `email_campaign_performance`, `email_link_statistics`",
+              "expected_behavior": "Names the campaign types and the best and worst campaigns behind the change. Does not bring up bounce statistics."
+            },
+            {
+              "description": "Campaign lookup: finds the newest email campaign and its results.",
+              "prompt": "Find my latest email campaign and show its results.",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `list_campaigns` with an email campaign type, then `get_campaign_statistics`",
+              "expected_behavior": "Names the newest email campaign and when it was created, then its recipients, opens, clicks, and order revenue."
+            },
+            {
+              "description": "Product ranking: best-selling products of the previous calendar month.",
+              "prompt": "Which products sold the most last month?",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `product_statistics` sorted by unique orders or total quantity",
+              "expected_behavior": "A ranked list of products for the previous calendar month in the business timezone."
+            },
+            {
+              "description": "Email editing: changes the buttons of the newest newsletter and saves a new revision without sending anything.",
+              "prompt": "Make the buttons in my latest newsletter green.",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `list_campaigns` with targeted-emailing, `get_email_editing_guide`, `get_campaign_email_for_editing`, `edit_campaign_email`, then `get_campaign_email_content` with the newest editor revision and `get_campaign_email_screenshot`",
+              "expected_behavior": "Says which buttons it will change, saves one new revision of the email in the Leadhub email editor, and reports what changed and, from the campaign state, whether and when recipients get it. Nothing is launched, scheduled, or sent."
+            }
+          ],
+          "negative": [
+            {
+              "description": "The server has no tool that deletes subscribers. The assistant deletes nothing and says the Leadhub connector cannot do it; it may look up the list first.",
+              "prompt": "Delete every subscriber from the main newsletter list."
+            },
+            {
+              "description": "The server has no tool that sends or launches a campaign, and an email edit never sends one. The assistant sends nothing and says the Leadhub connector cannot do it; it may look up the campaign first.",
+              "prompt": "Send this campaign to the whole audience right now."
+            },
+            {
+              "description": "The server has no tool that changes products in the catalog. The assistant changes nothing and says the Leadhub connector cannot do it; it may look up the product first.",
+              "prompt": "Change the price of a product in the catalog to 1."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First directory release. Reads Leadhub businesses, campaigns, products, interest lists, RFM, and analytics. Creates, edits, copies, and deletes audiences; every edit or delete is confirmed by the user first. Edits campaign emails: a change saves a new revision in the Leadhub email editor and never sends the campaign. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing."
+      }
+    }
   }
 }

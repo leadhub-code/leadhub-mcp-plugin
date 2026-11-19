@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
   "displayName": "Leadhub",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Access to the Leadhub MCP server: reads businesses, campaigns, products, interest lists, RFM, and analytics, creates and edits audiences, and edits campaign emails. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing.",
   "author": {
     "name": "Leadhub",
