@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
   "version": "1.0.0",
-  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
+  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences and RFM segments, edit campaign emails, and create website popups.",
   "author": {
     "name": "Leadhub",
     "url": "https://www.leadhub.co"
@@ -15,7 +15,7 @@
   "interface": {
     "displayName": "Leadhub",
     "shortDescription": "E-shop campaigns and analytics",
-    "longDescription": "Leadhub is a marketing automation platform for e-shops. It collects orders, products, and website visits from the shop, builds customer segments and RFM profiles from them, and reaches customers with targeted email and SMS campaigns, automated journeys, and popups. Every campaign is measured by the orders and revenue it brings.\n\nThis plugin brings your Leadhub account into the chat. Today it can:\n\u2022 Analyze how the shop, products, and email and SMS campaigns performed in any period, compared with an earlier one, including RFM segments and repeat purchases.\n\u2022 Find the customers you want to reach and save them as an audience.\n\u2022 Change the texts, buttons, and images of a campaign email.\n\nYou stay in control: an audience is changed or deleted only after you confirm, and an email edit is saved as a new version in the Leadhub editor. Nothing is ever sent.\n\nIncludes ten ready workflows, from a period review and RFM segmentation to campaign content and email editing.",
+    "longDescription": "Leadhub is a marketing automation platform for e-shops. It collects orders, products, and website visits from the shop, builds customer segments and RFM profiles from them, and reaches customers with targeted email and SMS campaigns, automated journeys, and popups. Every campaign is measured by the orders and revenue it brings.\n\nThis plugin brings your Leadhub account into the chat. Today it can:\n\u2022 Analyze how the shop, products, and email and SMS campaigns performed in any period, compared with an earlier one, including RFM segments and repeat purchases.\n\u2022 Find the customers you want to reach and save them as an audience.\n\u2022 Set up RFM profiles: the score buckets and the named customer segments of the RFM analysis.\n\u2022 Change the texts, buttons, and images of a campaign email.\n\u2022 Draft website popups and sign-up forms, choose where and to whom they show, and launch, pause, or archive them.\n\u2022 Archive an automated email or SMS campaign, which stops it, or restore an archived one as paused.\n\nYou stay in control: anything that overwrites, deletes, starts, or stops something (an audience, an RFM profile, a popup, or an automated campaign) waits for your confirmation. An email edit is saved as a new version in the Leadhub editor, and no email or SMS is ever sent.\n\nIncludes eleven ready workflows, from a period review and RFM segmentation to campaign content, email editing, and website popups.",
     "developerName": "Leadhub",
     "websiteURL": "https://www.leadhub.co",
     "supportURL": "https://podpora.leadhub.co/",
@@ -55,10 +55,10 @@
               "expected_behavior": "Names the newest email campaign and when it was created, then its recipients, opens, clicks, and order revenue."
             },
             {
-              "description": "Product ranking: best-selling products of the previous calendar month.",
-              "prompt": "Which products sold the most last month?",
-              "tools_triggered": "`list_businesses` when no business is selected yet, then `product_statistics` sorted by unique orders or total quantity",
-              "expected_behavior": "A ranked list of products for the previous calendar month in the business timezone."
+              "description": "Website popup: drafts a newsletter sign-up popup with a discount and stops before the launch.",
+              "prompt": "Create a popup that offers 10 % off the first order for a newsletter signup.",
+              "tools_triggered": "`list_businesses` when no business is selected yet, then `interest_lists` for the email list, `create_popup_draft` or `create_popup_from_template`, and `validate_popup_launch`; `get_reference`, `get_popup_definitions`, `update_popup_content`, and `set_popup_rules` when the draft needs them",
+              "expected_behavior": "Saves a popup draft with the offer, an email field that subscribes to an email interest list, and display rules, then shows the copy, the rules, and the audience and asks for approval. The popup is not launched, so no visitor sees it."
             },
             {
               "description": "Email editing: changes the buttons of the newest newsletter and saves a new revision without sending anything.",
@@ -73,7 +73,7 @@
               "prompt": "Delete every subscriber from the main newsletter list."
             },
             {
-              "description": "The server has no tool that sends or launches a campaign, and an email edit never sends one. The assistant sends nothing and says the Leadhub connector cannot do it; it may look up the campaign first.",
+              "description": "The server has no tool that sends an email or SMS campaign, and an email edit never sends one. The assistant sends nothing and says the Leadhub connector cannot do it; it may look up the campaign first.",
               "prompt": "Send this campaign to the whole audience right now."
             },
             {
@@ -84,7 +84,7 @@
         }
       },
       "publication": {
-        "release_notes": "First directory release. Reads Leadhub businesses, campaigns, products, interest lists, RFM, and analytics. Creates, edits, copies, and deletes audiences; every edit or delete is confirmed by the user first. Edits campaign emails: a change saves a new revision in the Leadhub email editor and never sends the campaign. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing."
+        "release_notes": "First directory release. Reads Leadhub businesses, campaigns, products, interest lists, RFM, and analytics. Creates, edits, copies, and deletes audiences, and creates, edits, deletes, and restores RFM profiles. Edits campaign emails: a change saves a new revision in the Leadhub email editor and never sends the campaign. Drafts, edits, launches, pauses, and archives website popups, and archives or restores automated email and SMS campaigns. Anything that overwrites, deletes, starts, or stops something is confirmed by the user first. Includes eleven workflows for analytics, campaign content, segmentation, marketing strategy, email editing, and website popups."
       }
     }
   }

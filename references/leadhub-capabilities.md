@@ -3,9 +3,9 @@
 This page describes what the Leadhub web app can do, so a proposal is not limited to what the analytics tools
 measure. Combine it with what the data of the business shows and with your own ideas.
 
-Some proposals can be made with the MCP write tools: audiences, and the email of a campaign with
-`edit_campaign_email` when the user asks for it. The user sets the rest up in the Leadhub web app at
-`https://app.leadhub.co/businesses/<business_id>/<page>`, or lets a browser agent click it through there.
+Some proposals can be made with the MCP write tools: audiences, popups, RFM profiles, and the email of a
+campaign with `edit_campaign_email` when the user asks for it. The user sets the rest up in the Leadhub web app
+at `https://app.leadhub.co/businesses/<business_id>/<page>`, or lets a browser agent click it through there.
 A browser agent works in the live account. It saves campaigns, popups, and audience syncs as drafts or paused,
 and launches, schedules, or sends only after the user confirms that step: a launched campaign emails or texts
 real customers.

@@ -8,18 +8,24 @@ This folder is the plugin. It lives in the Leadhub API repository as `plugins/le
 
 The test account needs a business whose newest newsletter (`targeted-emailing`) is a draft or scheduled, so the email editing case can say when recipients get the change. For a sent campaign the edit changes only the email kept in the editor.
 
+The business must have popups available and an email interest list, so the popup case can draft a sign-up popup with a SUBSCRIBE action. Its website must be a test site: a reviewer who approves a launch shows the popup to that site's visitors within seconds.
+
 ## Tool hints
 
 Each tool has one of three sets of annotations (`lh_api/mcp/annotations.py`):
 
 | Tools | `readOnlyHint` | `destructiveHint` | Why |
 | --- | --- | --- | --- |
-| Read: analytics, campaigns, products, lists, RFM, `list_audiences`, `get_audience` | true | false | They only read the Leadhub account the token can access. |
+| Read: analytics, campaigns, products, lists, RFM, `list_audiences`, `get_audience`, `get_popup_definitions`, `get_popup_content`, `validate_popup_launch` | true | false | They only read the Leadhub account the token can access. |
 | Write: `create_audience` | false | false | It adds an audience in Leadhub and changes no existing one. It does not turn ad syncs on. |
+| Write: `create_rfm_profile` | false | false | It adds an RFM profile in Leadhub and changes no existing one. No customer gets anything from it. |
 | Write: `edit_campaign_email`, `restore_campaign_email_revision` | false | false | They save a new revision of a campaign email in the Leadhub email editor and never launch or send a campaign. Earlier revisions stay in the editor history, and `restore_campaign_email_revision` brings one back. |
+| Write: `create_popup_draft`, `create_popup_from_template`, `update_popup_content`, `set_popup_rules`, `restore_campaign` | false | false | They add a popup draft, or save a draft or paused popup with a new revision in its history; earlier revisions stay. `restore_campaign` brings an archived popup or automated campaign back paused or as a draft. Nothing is shown on the shop's website until a launch. |
 | Destructive: `update_audience`, `delete_audience` | false | true | `update_audience` overwrites the name or the segment; an audience the user syncs to an ad platform passes a new segment there. `delete_audience` also deletes the audience on Facebook. The app asks the user first. |
+| Destructive: `update_rfm_profile`, `delete_rfm_profile`, `restore_rfm_profile` | false | true | `update_rfm_profile` overwrites the bounds, segments, or name of a profile. `delete_rfm_profile` stops the RFM conditions that name the profile from matching anyone, and `restore_rfm_profile` makes them match its segments again. RFM conditions of audiences and campaigns find a segment by its name, so a renamed or removed segment matches nobody there. The app asks the user first. |
+| Destructive: `launch_popup`, `pause_popup`, `cancel_popup_schedule`, `archive_campaign` | false | true | They change what visitors of the shop's website see: a launch or schedule starts a popup, a pause, schedule cancel, or archive stops it (`archive_campaign` also stops an automated email or SMS campaign). The app asks the user first. |
 
-`openWorldHint` is false for every tool: a call stays inside that one Leadhub account. It does not search the public web or call an open set of other services.
+`openWorldHint` is false for every tool: a call changes only that one Leadhub account and the popups it shows on the shop's website. It does not search the public web or call an open set of other services.
 
 ## Plugin files
 
@@ -35,7 +41,7 @@ Each tool has one of three sets of annotations (`lh_api/mcp/annotations.py`):
 | `gemini-extension.json` | Gemini CLI | extension identity and remote MCP URL (`httpUrl`, Streamable HTTP) |
 | `skills/*/SKILL.md` | every app | when to use the workflow and which tools to call |
 | `skills/*/agents/openai.yaml` | ChatGPT, Codex | skill name and MCP binding (`transport: streamable_http`) |
-| `references/` | packaged skill | copies of the metric, category, comparison, and RFM notes |
+| `references/` | packaged skill | copies of the metric, category, comparison, RFM, segmentation, capability, email editing, and popup notes |
 
 Skills and `references/` are one shared copy. Only the manifests and MCP links differ per app.
 
@@ -62,4 +68,4 @@ From a clone of the public repository, use `.` instead of `plugins/leadhub`. Res
 0.1.1 — Adds skills for campaign content and segmentation.
 0.1.2 — Listing fixes for the OpenAI review: a 30-character short description, a composer icon, and expected tools for each test prompt. Every manifest names its homepage, repository, and license. Adds SECURITY.md, .codexignore, and a Claude Code marketplace file, so the public repository installs with one command.
 0.2.0 — Edits campaign emails. New tools change the texts, buttons, images, and layout of an email and save a new revision in the Leadhub email editor, without launching or sending the campaign; earlier revisions can be restored. Audiences can be created, edited, copied, and deleted; a delete is confirmed by the user first. Adds the email editing and marketing strategy skills.
-1.0.0 — First directory release. Reads Leadhub businesses, campaigns, products, interest lists, RFM, and analytics. Creates, edits, copies, and deletes audiences; every edit or delete is confirmed by the user first. Edits campaign emails: a change saves a new revision in the Leadhub email editor and never sends the campaign. Includes ten workflows for analytics, campaign content, segmentation, marketing strategy, and email editing.
+1.0.0 — First directory release. Reads Leadhub businesses, campaigns, products, interest lists, RFM, and analytics. Creates, edits, copies, and deletes audiences, and creates, edits, deletes, and restores RFM profiles. Edits campaign emails: a change saves a new revision in the Leadhub email editor and never sends the campaign. Drafts, edits, launches, pauses, and archives website popups, and archives or restores automated email and SMS campaigns. Anything that overwrites, deletes, starts, or stops something is confirmed by the user first. Includes eleven workflows for analytics, campaign content, segmentation, marketing strategy, email editing, and website popups.

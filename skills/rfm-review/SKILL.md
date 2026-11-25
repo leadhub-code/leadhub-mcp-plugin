@@ -11,6 +11,6 @@ The question is what the customer base looks like by RFM segment, and how it is 
 
 (not in earlier window) and (not in later window) are customers entering and leaving the window. `bucket_movement` shows shifts along recency, frequency, and monetary.
 
-Focus on the segments and moves that matter for this business. The tools do not edit the profile.
+Focus on the segments and moves that matter for this business.
 
 The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

@@ -18,4 +18,7 @@ They are in parentheses so they do not mix with a profile segment such as "Churn
 bucket_movement is the headcount change of each recency, frequency, and monetary bucket.
 delta is the later window minus the earlier one.
 
-These tools do not edit profiles.
+`create_rfm_profile`, `update_rfm_profile`, `delete_rfm_profile` and `restore_rfm_profile` change profiles.
+`list_rfm_profiles` with include_deleted lists the deleted profiles too, which `restore_rfm_profile` brings back.
+RFM segment conditions of audiences and campaigns read the profile each time they run and name its segments by name,
+so a renamed or removed segment matches nobody there.

@@ -1,0 +1,11 @@
+interface:
+  display_name: "Website popup"
+  short_description: "Design, target, and launch a popup or a web form for the shop's website."
+  default_prompt: "Create a popup that offers 10 % off the first order for a newsletter signup."
+dependencies:
+  tools:
+    - type: mcp
+      value: leadhub
+      description: Leadhub MCP server
+      transport: streamable_http
+      url: https://api.leadhub.co/mcp

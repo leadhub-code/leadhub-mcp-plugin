@@ -6,11 +6,14 @@ This plugin brings your Leadhub account into Claude, ChatGPT, Gemini CLI, and Cu
 
 - Analyze how the shop, products, and email and SMS campaigns performed in any period, compared with an earlier one, including RFM segments and repeat purchases.
 - Find the customers you want to reach and save them as an audience.
+- Set up RFM profiles: the score buckets and the named customer segments of the RFM analysis.
 - Change the texts, buttons, and images of a campaign email.
+- Draft website popups and sign-up forms, choose where and to whom they show, and launch, pause, or archive them.
+- Archive an automated email or SMS campaign, which stops it, or restore an archived one as paused.
 
-You stay in control: an audience is changed or deleted only after you confirm, and an email edit is saved as a new version in the Leadhub editor. Nothing is ever sent. A changed audience that syncs to ad platforms is updated there too, and a deleted one is deleted there.
+You stay in control: anything that overwrites, deletes, starts, or stops something (an audience, an RFM profile, a popup, or an automated campaign) waits for your confirmation. An email edit is saved as a new version in the Leadhub editor, and no email or SMS is ever sent. A changed audience that syncs to ad platforms is updated there too, and a deleted one is deleted there.
 
-Ten workflows are bundled as skills: a period review, an email diagnosis, an SMS diagnosis, repeat-purchase retention, RFM segments, traffic, a campaign content review, a segmentation review, a marketing strategy, and email editing.
+Eleven workflows are bundled as skills: a period review, an email diagnosis, an SMS diagnosis, repeat-purchase retention, RFM segments, traffic, a campaign content review, a segmentation review, a marketing strategy, email editing, and a website popup.
 
 You sign in with your Leadhub account. The plugin talks only to the Leadhub MCP server at `https://api.leadhub.co/mcp` and sees only the businesses your account can access.
 

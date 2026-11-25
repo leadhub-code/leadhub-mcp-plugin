@@ -1,7 +1,7 @@
 {
   "name": "leadhub",
   "version": "1.0.0",
-  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences, and edit campaign emails.",
+  "description": "Leadhub marketing automation for e-shops in your AI assistant: analyze sales and campaigns, build audiences and RFM segments, edit campaign emails, and create website popups.",
   "mcpServers": {
     "leadhub": {
       "httpUrl": "https://api.leadhub.co/mcp"
