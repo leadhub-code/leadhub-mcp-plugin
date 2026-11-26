@@ -12,20 +12,20 @@ The business must have popups available and an email interest list, so the popup
 
 ## Tool hints
 
-Each tool has one of three sets of annotations (`lh_api/mcp/annotations.py`):
+Each tool has one of four sets of annotations (`lh_api/mcp/annotations.py`):
 
-| Tools | `readOnlyHint` | `destructiveHint` | Why |
-| --- | --- | --- | --- |
-| Read: analytics, campaigns, products, lists, RFM, `list_audiences`, `get_audience`, `get_popup_definitions`, `get_popup_content`, `validate_popup_launch` | true | false | They only read the Leadhub account the token can access. |
-| Write: `create_audience` | false | false | It adds an audience in Leadhub and changes no existing one. It does not turn ad syncs on. |
-| Write: `create_rfm_profile` | false | false | It adds an RFM profile in Leadhub and changes no existing one. No customer gets anything from it. |
-| Write: `edit_campaign_email`, `restore_campaign_email_revision` | false | false | They save a new revision of a campaign email in the Leadhub email editor and never launch or send a campaign. Earlier revisions stay in the editor history, and `restore_campaign_email_revision` brings one back. |
-| Write: `create_popup_draft`, `create_popup_from_template`, `update_popup_content`, `set_popup_rules`, `restore_campaign` | false | false | They add a popup draft, or save a draft or paused popup with a new revision in its history; earlier revisions stay. `restore_campaign` brings an archived popup or automated campaign back paused or as a draft. Nothing is shown on the shop's website until a launch. |
-| Destructive: `update_audience`, `delete_audience` | false | true | `update_audience` overwrites the name or the segment; an audience the user syncs to an ad platform passes a new segment there. `delete_audience` also deletes the audience on Facebook. The app asks the user first. |
-| Destructive: `update_rfm_profile`, `delete_rfm_profile`, `restore_rfm_profile` | false | true | `update_rfm_profile` overwrites the bounds, segments, or name of a profile. `delete_rfm_profile` stops the RFM conditions that name the profile from matching anyone, and `restore_rfm_profile` makes them match its segments again. RFM conditions of audiences and campaigns find a segment by its name, so a renamed or removed segment matches nobody there. The app asks the user first. |
-| Destructive: `launch_popup`, `pause_popup`, `cancel_popup_schedule`, `archive_campaign` | false | true | They change what visitors of the shop's website see: a launch or schedule starts a popup, a pause, schedule cancel, or archive stops it (`archive_campaign` also stops an automated email or SMS campaign). The app asks the user first. |
+| Tools | `readOnlyHint` | `destructiveHint` | `openWorldHint` | Why |
+| --- | --- | --- | --- | --- |
+| Read: analytics, campaigns, products, lists, RFM, `list_audiences`, `get_audience`, `get_popup_definitions`, `get_popup_content`, `validate_popup_launch` | true | false | false | They only read the Leadhub account the token can access. |
+| Write: `create_audience` | false | false | false | It adds an audience in Leadhub and changes no existing one. It does not turn ad syncs on. |
+| Write: `create_rfm_profile` | false | false | false | It adds an RFM profile in Leadhub and changes no existing one. No customer gets anything from it. |
+| Write: `edit_campaign_email`, `restore_campaign_email_revision` | false | false | false | They save a new revision of a campaign email in the Leadhub email editor and never launch or send a campaign. Earlier revisions stay in the editor history, and `restore_campaign_email_revision` brings one back. |
+| Write: `create_popup_draft`, `create_popup_from_template`, `update_popup_content`, `set_popup_rules`, `restore_campaign` | false | false | false | They add a popup draft, or save a draft or paused popup with a new revision in its history; earlier revisions stay. `restore_campaign` brings an archived popup or automated campaign back paused or as a draft. Nothing is shown on the shop's website until a launch. |
+| Destructive: `update_audience`, `delete_audience` | false | true | false | `update_audience` overwrites the name or the segment; an audience the user syncs to an ad platform passes a new segment there. `delete_audience` also deletes the audience on Facebook. The app asks the user first. |
+| Destructive: `update_rfm_profile`, `delete_rfm_profile`, `restore_rfm_profile` | false | true | false | `update_rfm_profile` overwrites the bounds, segments, or name of a profile. `delete_rfm_profile` stops the RFM conditions that name the profile from matching anyone, and `restore_rfm_profile` makes them match its segments again. RFM conditions of audiences and campaigns find a segment by its name, so a renamed or removed segment matches nobody there. The app asks the user first. |
+| Destructive, open-world: `launch_popup`, `pause_popup`, `cancel_popup_schedule`, `archive_campaign` | false | true | true | They change what visitors of the shop's website see: a launch or schedule starts a popup, a pause, schedule cancel, or archive stops it (`archive_campaign` also stops an automated email or SMS campaign). The app asks the user first. |
 
-`openWorldHint` is false for every tool: a call changes only that one Leadhub account and the popups it shows on the shop's website. It does not search the public web or call an open set of other services.
+`openWorldHint` is true only for the destructive open-world tools: anyone who visits the shop's website sees the popup they start or stop, and `archive_campaign` also stops the emails or texts an automated campaign sends to recipients. `update_audience` and `delete_audience` stay closed-world: they change one audience in the ad account the user connected, and only the user's own ad campaigns, run outside these tools, decide who sees an ad. No tool searches the public web or calls an open set of other services.
 
 ## Plugin files
 

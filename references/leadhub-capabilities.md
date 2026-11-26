@@ -5,10 +5,10 @@ measure. Combine it with what the data of the business shows and with your own i
 
 Some proposals can be made with the MCP write tools: audiences, popups, RFM profiles, and the email of a
 campaign with `edit_campaign_email` when the user asks for it. The user sets the rest up in the Leadhub web app
-at `https://app.leadhub.co/businesses/<business_id>/<page>`, or lets a browser agent click it through there.
-A browser agent works in the live account. It saves campaigns, popups, and audience syncs as drafts or paused,
-and launches, schedules, or sends only after the user confirms that step: a launched campaign emails or texts
-real customers.
+at `https://app.leadhub.co/businesses/<business_id>/<page>`.
+Whoever sets it up keeps campaigns, popups, and audience syncs as drafts or paused, and launches, schedules, sends,
+or syncs only after the user confirms that step: a launched popup is shown to the website's visitors, a launched
+campaign emails or texts real customers, and a sync sends the audience to the ad platform.
 Pages below are given as `<page>`. New campaigns and ready-made templates start from "+ Create new" on `dashboard`.
 A proposal the user can act on usually says what to set up and where, who it is for (segment conditions
 as rule JSON from segmentation://conditions), and how to tell whether it worked.

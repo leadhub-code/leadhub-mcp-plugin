@@ -13,6 +13,6 @@ The examples of gaps in the capabilities reference are inspiration. Look for wha
 
 Rank the actions by expected impact. For each, say what to set up and where in the Leadhub web app, who it is for (rule JSON when a segment is involved), and how to tell whether it worked.
 
-The user, a browser agent, or the MCP write tools set the actions up in Leadhub as drafts, and nothing is launched or sent before the user confirms.
+The user or the MCP write tools set the actions up in Leadhub as drafts, and nothing is launched or sent before the user confirms.
 
 The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
