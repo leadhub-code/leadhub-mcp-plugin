@@ -11,7 +11,7 @@
   "repository": "https://github.com/leadhub-code/leadhub-mcp-plugin",
   "license": "LicenseRef-Proprietary",
   "logo": "assets/logo.png",
-  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm"],
+  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm", "audiences", "popups"],
   "skills": "./skills/",
   "mcpServers": "./mcp.cursor.json"
 }

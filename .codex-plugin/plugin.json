@@ -9,7 +9,7 @@
   "homepage": "https://www.leadhub.co",
   "repository": "https://github.com/leadhub-code/leadhub-mcp-plugin",
   "license": "LicenseRef-Proprietary",
-  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm"],
+  "keywords": ["leadhub", "marketing", "analytics", "campaigns", "email", "sms", "rfm", "audiences", "popups"],
   "skills": "./skills/",
   "mcpServers": "./mcp.codex.json",
   "interface": {
@@ -28,7 +28,7 @@
     "defaultPrompt": [
       "Summarize this business for the last 30 days against the previous 30.",
       "Explain why email revenue changed in the last 30 days compared with the previous 30.",
-      "Find my latest email campaign and show its results."
+      "Create a popup that offers 10 % off the first order for a newsletter signup."
     ]
   },
   "extensions": {
