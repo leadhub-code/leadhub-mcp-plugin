@@ -13,4 +13,4 @@ Tell the user briefly what you will change. Then call `edit_campaign_email` with
 
 Check the result with `get_campaign_email_content` and `use_newest_editor_revision` true. When the change affects how the email looks (layout, images, colors, buttons), also look at it with `get_campaign_email_screenshot`. Report what changed, what you could not change, and the `revision_effect`, and offer the user a look at the email as `get_campaign_email_screenshot` describes. To undo, use `list_campaign_email_revisions` and `restore_campaign_email_revision`.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

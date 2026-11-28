@@ -13,4 +13,4 @@ The question is what the customer base looks like by RFM segment, and how it is 
 
 Focus on the segments and moves that matter for this business.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

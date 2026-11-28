@@ -41,9 +41,9 @@ Each tool has one of four sets of annotations (`lh_api/mcp/annotations.py`):
 | `gemini-extension.json` | Gemini CLI | extension identity and remote MCP URL (`httpUrl`, Streamable HTTP) |
 | `skills/*/SKILL.md` | every app | when to use the workflow and which tools to call |
 | `skills/*/agents/openai.yaml` | ChatGPT, Codex | skill name and MCP binding (`transport: streamable_http`) |
-| `references/` | packaged skill | copies of the metric, category, comparison, RFM, segmentation, capability, email editing, and popup notes |
+| `skills/*/references/` | every app | the notes a skill reads (metrics, categories, comparisons, RFM, segmentation, capabilities, email editing, popups), next to its `SKILL.md` |
 
-Skills and `references/` are one shared copy. Only the manifests and MCP links differ per app.
+Skills and their references are one shared copy. Only the manifests and MCP links differ per app. A reference two skills read is copied into both, because the Agent Skills format resolves a skill's relative paths from its own folder.
 
 `streamable_http` in `agents/openai.yaml` uses an underscore. `http` in `mcp.codex.json` and `.mcp.json` is the same Streamable HTTP transport. In `gemini-extension.json`, `httpUrl` is Streamable HTTP. A `url` field in that file would mean SSE.
 

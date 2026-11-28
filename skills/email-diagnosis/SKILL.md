@@ -15,4 +15,4 @@ Things often worth a look: which campaigns or types carry the revenue, where eng
 
 Engagement on email is an open. Rates are percent from 0 to 100. These tools are the period analytics, not `get_campaign_statistics`.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

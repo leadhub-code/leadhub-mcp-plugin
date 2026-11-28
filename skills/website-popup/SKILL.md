@@ -17,4 +17,4 @@ Short copy in the business language usually works best. A delay or exit intent i
 
 Before asking for approval, check the launch with `validate_popup_launch` and fix what it lists, so the user approves a popup that can start. Show the user the copy, the display rules, and the audience. Launch only after the user approves that exact popup, and say that visitors see it within seconds.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

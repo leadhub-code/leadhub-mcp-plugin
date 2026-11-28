@@ -13,4 +13,4 @@ Subject, preheader, copy, calls to action, and the audience are the usual suspec
 
 Suggest changes the user can make in Leadhub. Change an email only when the user asks for it, with `edit_campaign_email`.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

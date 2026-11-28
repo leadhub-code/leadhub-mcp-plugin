@@ -15,4 +15,4 @@ Rank the actions by expected impact. For each, say what to set up and where in t
 
 The user or the MCP write tools set the actions up in Leadhub as drafts, and nothing is launched or sent before the user confirms.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

@@ -15,4 +15,4 @@ The comparison is a second call with the previous period of equal length, not a 
 
 Lead with what changed the most and why it matters, rather than walking through every number.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

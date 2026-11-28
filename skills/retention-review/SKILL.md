@@ -11,4 +11,4 @@ The question is how first-time buyers come back.
 
 Worth a look, for example: when most returns happen, and whether later cohorts do better or worse than earlier ones. LTV is in the business primary currency from `list_businesses`.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.

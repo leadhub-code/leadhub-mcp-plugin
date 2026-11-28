@@ -13,4 +13,4 @@ Explain the AND/OR logic and the interest lists. For an automated campaign, when
 
 Suggested changes use only conditions from `list_segment_conditions`, as rule JSON the user can rebuild in the Leadhub segment designer. `validate_segment_query` checks a proposed tree and `count_segment_audience` says how many contacts it reaches. A proposal the user approves can be saved as an audience with `create_audience` or `update_audience`.
 
-The files named above ship with this plugin, under `references/`. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
+The files named above are in the `references/` folder of this skill. They are copies of the resources the Leadhub MCP server serves, so the skill does not need to read those resources.
